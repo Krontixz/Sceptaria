@@ -45,8 +45,8 @@
 }
 
 #play-button img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: none;
+   display: block;
+   width: 256px;
+   height: 64px;
+  align-items: center;
 }
