@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Sceptaria-Classic;
+    src: url(assets/fonts/Sceptaria-Classic.ttf) format('truetype');
+}
+
+
+#main-header {
+    color:rgb(0, 34, 120);
+    font-size: 48px;
+    -webkit-text-stroke: 4px rgb(218, 0, 0);
+    font-family: Sceptaria-Classic;
+     position: absolute;
+  top: 40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+#secondary-header {
+    color: rgb(171, 100, 18);
+    font-size: 36px;
+    -webkit-text-stroke: 2px rgb(68, 24, 115);
+    font-family: Sceptaria-Classic;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+}
+
+#play-container {
+    position: absolute;
+    top: 188px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#play-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#play-button img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+}
