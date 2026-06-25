@@ -1,6 +1,30 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#page-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url(../sceptaria/textures/gui/home/bg.png);
+    background-size: 100vw 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+
 @font-face {
     font-family: Sceptaria-Classic;
-    src: url(assets/fonts/Sceptaria-Classic.ttf) format('truetype');
+    src: url(../assets/sceptaria/fonts/Sceptaria-Classic.ttf) format('truetype');
 }
 
 
