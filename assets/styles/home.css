@@ -21,30 +21,78 @@ body {
     image-rendering: pixelated;
 }
 
+#game-loading-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.24);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#game-loading-overlay.active {
+    display: flex;
+}
+
+#game-loading-text {
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    color: #ffd700;
+    font-size: clamp(28px, 6vw, 64px);
+    text-align: center;
+    text-shadow: 0 0 18px rgba(255, 215, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.55);
+    animation: pulse 1s ease-in-out infinite alternate;
+    padding: 1rem 2rem;
+}
+
+#page-bg.game-animate {
+    background-repeat: repeat-x !important;
+    background-size: auto 100vh !important;
+    background-position: 50% 50% !important;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.92;
+    }
+    to {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
 
 @font-face {
     font-family: Sceptaria-Classic;
-    src: url(../assets/sceptaria/fonts/Sceptaria-Classic.ttf) format('truetype');
+    src: url(../sceptaria/fonts/universal/Sceptaria-Classic.ttf) format('truetype');
 }
 
 
 #main-header {
-    color:rgb(0, 34, 120);
+    color: #db0000;
     font-size: 48px;
-    -webkit-text-stroke: 4px rgb(218, 0, 0);
-    font-family: Sceptaria-Classic;
-     position: absolute;
-  top: 40px; 
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    font-weight: 400;
+    text-shadow: 0 2px 1px rgba(29, 0, 156, 0.75);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.75);
+    text-rendering: optimizeLegibility;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 #secondary-header {
-    color: rgb(171, 100, 18);
+    color: #d9c000;
     font-size: 36px;
-    -webkit-text-stroke: 2px rgb(68, 24, 115);
-    font-family: Sceptaria-Classic;
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    font-weight: 400;
+    text-shadow: 0 1px 1px rgba(6, 0, 188, 0.43);
+    -webkit-text-stroke: 0.8px rgb(0, 155, 216);
+    text-rendering: optimizeLegibility;
     position: absolute;
     top: 120px;
     left: 50%;
@@ -55,22 +103,43 @@ body {
 
 #play-container {
     position: absolute;
-    top: 188px;
+    top: 220px;
     left: 50%;
     transform: translateX(-50%);
+    width: min(90vw, 320px);
+    display: flex;
+    justify-content: center;
 }
 
 #play-button {
-    background: none;
-    border: none;
-    padding: 0;
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 12px;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    outline: none;
+}
+
+#play-button:hover,
+#play-button:focus-visible {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#play-button:focus-visible {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
 }
 
 #play-button img {
-   display: block;
-   width: 256px;
-   height: 64px;
-  align-items: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 256px;
+    border-radius: 12px;
 }

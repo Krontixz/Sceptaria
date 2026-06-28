@@ -1,0 +1,116 @@
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    overflow: hidden;
+    background: #05050b;
+    color: #ffd700;
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+}
+#game-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #05050b;
+}
+#game-canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+#game-ui {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    pointer-events: none;
+}
+#game-instructions,
+#player-info {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+#version {
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    color: red;
+    font-size: clamp(12px, 1.5vw, 16px);
+}
+#debug-menu {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    top: 6rem;
+    max-width: 380px;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffd700;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border: 1px solid rgba(255, 215, 0, 0.55);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.18);
+    white-space: pre-wrap;
+    pointer-events: none;
+    z-index: 1000;
+}
+#debug-menu.visible {
+    display: block;
+}
+#game-loading-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.24);
+    z-index: 9999;
+    pointer-events: none;
+}
+#game-loading-overlay.active {
+    display: flex;
+}
+#game-loading-text {
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    color: #ffd700;
+    font-size: clamp(28px, 6vw, 64px);
+    text-align: center;
+    text-shadow: 0 0 18px rgba(255, 215, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.55);
+    animation: pulse 1s ease-in-out infinite alternate;
+    padding: 1rem 2rem;
+}
+#page-bg.game-animate {
+    background-repeat: repeat-x !important;
+    background-size: auto 100vh !important;
+    background-position: 50% 50% !important;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.92;
+    }
+    to {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+.game-page {
+    font-family: 'Sceptaria-Classic', Arial, sans-serif;
+    color: #ffd700;
+    text-align: center;
+    margin-top: 30vh;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+}
