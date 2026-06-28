@@ -1,3 +1,6 @@
 {
     "block.sceptaria.block_o_grass.name": "Grass Block"
 }
+{
+    "block.sceptaria.block_o_grass.tooltip": "a literal grass block, idk what you expect it to do"
+}
